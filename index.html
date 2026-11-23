@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhoron · আভরণ — Luxury Bengali Couture & Handloom Atelier</title>
+  <meta name="description" content="Abhoron (আভরণ) — Luxury Bangladeshi handloom textiles, Dhakai Jamdani sarees, Rajshahi silk panjabis, muslin kurtis, and antique zari shawls crafted by master weavers." />
+  <meta property="og:title" content="Abhoron · আভরণ — Luxury Bengali Couture & Handloom Atelier" />
+  <meta property="og:description" content="Heirloom Dhakai Jamdani, Rajshahi mulberry silk, handspun muslin, and antique zari couture." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23881337'/%3E%3Crect x='5' y='5' width='54' height='54' rx='10' fill='none' stroke='%23D97706' stroke-width='1.5' stroke-opacity='0.85'/%3E%3Cpath d='M32 13 L47 32 L32 51 L17 32 Z' fill='none' stroke='%23FDE68A' stroke-width='1.6'/%3E%3Cpath d='M32 20 L40 32 L32 44 L24 32 Z' fill='%23D97706' fill-opacity='0.35' stroke='%23FDE68A' stroke-width='1.2'/%3E%3Ccircle cx='32' cy='32' r='3' fill='%23FFFBF5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Atmospheric Background Layer -->
+  <div class="atelier-backdrop" aria-hidden="true"></div>
+  <div class="atelier-vignette" aria-hidden="true"></div>
+
+  <!-- Top Utility Ribbon -->
+  <div class="top-ribbon">
+    <div class="container ribbon-inner">
+      <p class="ribbon-copy">
+        Complimentary Dhaka delivery over ৳10,000 &nbsp;·&nbsp; Use code <span class="mono-pill">ABHORON15</span> for 15% off your couture bag
+      </p>
+      <div class="ribbon-actions">
+        <button type="button" class="ribbon-link" id="openOrdersBtn">Track Order</button>
+        <span class="ribbon-sep" aria-hidden="true">|</span>
+        <button type="button" class="ribbon-link" id="openHeritageBtn">Our Looms</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Glass Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand-lockup" aria-label="Abhoron Home">
+        <span class="brand-crest" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="44" height="44" rx="11" fill="#881337" stroke="#D97706" stroke-width="1.4" />
+            <path d="M24 8L38 24L24 40L10 24L24 8Z" stroke="#FDE68A" stroke-width="1.35" />
+            <path d="M24 14L32.5 24L24 34L15.5 24L24 14Z" fill="#D97706" fill-opacity="0.28" stroke="#F59E0B" stroke-width="1.1" />
+            <path d="M16 16L32 32M32 16L16 32" stroke="#FDE68A" stroke-opacity="0.45" stroke-width="0.9" />
+            <circle cx="24" cy="24" r="2.6" fill="#FFFBF5" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-wordmark">ABHORON</span>
+          <span class="brand-sub">আভরণ · Dhaka Couture Atelier</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#collection" class="nav-link">Collection</a>
+        <a href="#featured-craft" class="nav-link">Craftsmanship</a>
+        <button type="button" class="nav-link" id="navWishlistBtn">
+          Wishlist <span class="count-pill" id="wishlistCount">0</span>
+        </button>
+        <button type="button" class="nav-link nav-admin-btn hidden" id="openAdminBtn">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" />
+            <path d="M9.5 12l1.8 1.8 3.5-3.6" />
+          </svg>
+          Atelier Admin
+        </button>
+      </nav>
+
+      <div class="header-controls">
+        <div id="authHeaderSlot" class="auth-slot">
+          <button type="button" class="btn-ghost-glass" id="openAuthBtn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M5 20c0-3.8 3.1-6.5 7-6.5s7 2.7 7 6.5" />
+            </svg>
+            <span>Sign in</span>
+          </button>
+        </div>
+
+        <button type="button" class="btn-burgundy bag-trigger" id="openCartBtn" aria-label="Open shopping bag">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M6 8h12l-1.2 12H7.2L6 8z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+          </svg>
+          <span class="bag-label">Bag</span>
+          <span class="bag-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Editorial Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-crystal">
+          <div class="hero-copy">
+            <div class="heritage-tag">
+              <span class="gold-dot" aria-hidden="true"></span>
+              <span>Autumn–Winter Heritage Edit · Sonargaon &amp; Rajshahi Looms</span>
+            </div>
+            <h1 class="hero-title">
+              Woven in royal thread, tailored for heirloom evenings.
+            </h1>
+            <p class="hero-lead">
+              Hand-loomed Dhakai Jamdani sarees, pure Rajshahi mulberry silk panjabis, and antique zari shawls — each piece numbered, authenticated, and finished by master artisans of Bengal.
+            </p>
+            <div class="hero-actions">
+              <a href="#collection" class="btn-burgundy btn-lg">Explore the Collection</a>
+              <button type="button" class="btn-outline-gold btn-lg" id="heroQuickSpotlightBtn">
+                Inspect Featured Jamdani
+              </button>
+            </div>
+            <dl class="hero-provenance">
+              <div>
+                <dt>180+ Hours</dt>
+                <dd>Single pit-loom Jamdani weave</dd>
+              </div>
+              <div>
+                <dt>GI Certified</dt>
+                <dd>Sonargaon &amp; Rajshahi silk</dd>
+              </div>
+              <div>
+                <dt>12 Editions</dt>
+                <dd>Small-batch numbered couture</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Interactive 3D Hero Atelier Card -->
+          <div class="hero-showcase" id="heroShowcaseCard" data-tilt>
+            <div class="tilt-glare" aria-hidden="true"></div>
+            <div class="showcase-artwork" id="heroArtwork"></div>
+            <div class="showcase-caption">
+              <div>
+                <span class="sku-tag">ABH-JM-001</span>
+                <h2>Nawabganj Royal Burgundy Jamdani</h2>
+              </div>
+              <span class="showcase-price">৳18,500</span>
+            </div>
+            <div class="showcase-meta">
+              <span>100-Count Muslin Cotton &amp; Antique Zari</span>
+              <span class="stock-pill">Limited · 5 left</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Filter & Catalog Section -->
+    <section class="collection-section" id="collection">
+      <div class="container">
+        <div class="section-header-bar crystal-panel">
+          <div class="section-heading-group">
+            <h2 class="section-title">The Atelier Collection</h2>
+            <p class="section-subtitle" id="catalogSummary">Showing curated handloom editions in BDT (৳)</p>
+          </div>
+
+          <!-- Search + Sort + Price Controls -->
+          <div class="filter-toolbar">
+            <label class="search-field" for="searchInput">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M20 20l-3.5-3.5" />
+              </svg>
+              <input type="search" id="searchInput" placeholder="Search Jamdani, silk, panjabi, zari..." autocomplete="off" />
+            </label>
+
+            <div class="price-filter-group">
+              <label for="priceRangeInput" class="filter-label">
+                Max Price: <strong id="priceRangeValue">৳25,000</strong>
+              </label>
+              <input type="range" id="priceRangeInput" min="2000" max="25000" step="500" value="25000" />
+            </div>
+
+            <label class="sort-field" for="sortSelect">
+              <span class="sr-only">Sort products</span>
+              <select id="sortSelect">
+                <option value="featured">Sort: Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-desc">Top Rated</option>
+              </select>
+            </label>
+          </div>
+
+          <!-- Category Pills -->
+          <div class="category-pills" id="categoryPills" role="tablist" aria-label="Product categories">
+            <button type="button" class="cat-pill active" data-category="all" role="tab" aria-selected="true">All Couture</button>
+            <button type="button" class="cat-pill" data-category="Jamdani Sarees" role="tab" aria-selected="false">Jamdani Sarees</button>
+            <button type="button" class="cat-pill" data-category="Silk Panjabi" role="tab" aria-selected="false">Silk Panjabi</button>
+            <button type="button" class="cat-pill" data-category="Muslin Kurtis" role="tab" aria-selected="false">Muslin Kurtis</button>
+            <button type="button" class="cat-pill" data-category="Handloom Shirts" role="tab" aria-selected="false">Handloom Shirts</button>
+            <button type="button" class="cat-pill" data-category="Zari Shawls" role="tab" aria-selected="false">Zari Shawls</button>
+            <button type="button" class="cat-pill pill-wishlist" data-category="__wishlist" role="tab" aria-selected="false">Saved Wishlist</button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+        <!-- Empty State -->
+        <div class="empty-catalog crystal-panel hidden" id="emptyCatalogState">
+          <h3>No couture pieces match this filter</h3>
+          <p>Broaden your price ceiling, clear the search query, or return to the full collection.</p>
+          <button type="button" class="btn-burgundy" id="resetFiltersBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Craftsmanship & Heritage Strip -->
+    <section class="heritage-section" id="featured-craft">
+      <div class="container">
+        <div class="heritage-grid">
+          <article class="heritage-card crystal-panel">
+            <div class="heritage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 6h16M4 12h16M4 18h16M8 4v16M16 4v16" />
+              </svg>
+            </div>
+            <h3>Discontinuous Weft Jamdani</h3>
+            <p>Every geometric <em>buti</em> and floral <em>jaal</em> is inlaid by hand on wooden pit looms in Narayanganj, requiring two weavers working in tandem.</p>
+          </article>
+          <article class="heritage-card crystal-panel">
+            <div class="heritage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" />
+                <circle cx="12" cy="11" r="2.5" />
+              </svg>
+            </div>
+            <h3>Authenticated Provenance</h3>
+            <p>Each garment ships with a serialized weave certificate, artisan guild signature, and dedicated Firestore order tracking from loom to doorstep.</p>
+          </article>
+          <article class="heritage-card crystal-panel">
+            <div class="heritage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 2v20M5 7c3-2 11-2 14 0M5 17c3 2 11 2 14 0" />
+              </svg>
+            </div>
+            <h3>Natural &amp; Zari Dyes</h3>
+            <p>Deep royal burgundy lac, indigo extracts, and antique gold-wrapped silk threads preserve luminous depth through generations of wear.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner crystal-panel">
+      <div class="footer-brand">
+        <span class="brand-wordmark">ABHORON · আভরণ</span>
+        <p>Luxury Bangladeshi Handloom &amp; Textile Couture. Crafted for ICT 4364 — E-Commerce, Digital Marketing &amp; Cyber Security Lab, University of Frontier Technology, Bangladesh.</p>
+      </div>
+      <div class="footer-links">
+        <button type="button" class="text-btn" id="footerOrdersBtn">Order Tracking</button>
+        <button type="button" class="text-btn" id="footerAuthBtn">Account &amp; Atelier Access</button>
+        <span class="footer-promo">Promo: <span class="mono-pill">ABHORON15</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Shopping Bag Drawer -->
+  <div class="drawer-backdrop hidden" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <h2>Your Couture Bag</h2>
+        <p class="drawer-sub" id="cartItemSummary">0 pieces selected</p>
+      </div>
+      <button type="button" class="icon-close" id="closeCartBtn" aria-label="Close bag">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body" id="cartItemsList"></div>
+
+    <div class="drawer-footer">
+      <form class="promo-form" id="promoForm">
+        <input type="text" id="promoInput" placeholder="Promo code (e.g. ABHORON15)" aria-label="Promo code" />
+        <button type="submit" class="btn-outline-gold">Apply</button>
+      </form>
+      <p class="promo-feedback" id="promoFeedback"></p>
+
+      <div class="totals-breakdown">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">৳0</span>
+        </div>
+        <div class="total-row discount-row hidden" id="cartDiscountRow">
+          <span>Promo (<span id="appliedPromoLabel">ABHORON15</span>)</span>
+          <span id="cartDiscount">−৳0</span>
+        </div>
+        <div class="total-row">
+          <span>Insured Courier</span>
+          <span id="cartShipping">৳0</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>Total (BDT)</span>
+          <span id="cartGrandTotal">৳0</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn-burgundy btn-full" id="proceedCheckoutBtn" disabled>
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Quick-View Product Modal -->
+  <div class="modal-overlay hidden" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <div class="modal-card modal-wide crystal-modal">
+      <button type="button" class="icon-close modal-close-abs" data-close-modal="quickViewModal" aria-label="Close quick view">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <div class="qv-grid" id="quickViewBody"></div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal-card modal-wide crystal-modal">
+      <div class="modal-head">
+        <div>
+          <h2 id="checkoutTitle">Atelier Checkout</h2>
+          <p class="modal-sub">Complete delivery details to reserve your handloom order in Cloud Firestore.</p>
+        </div>
+        <button type="button" class="icon-close" data-close-modal="checkoutModal" aria-label="Close checkout">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormView" class="checkout-layout">
+        <form id="checkoutForm" class="checkout-form">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="coName">Full Name</label>
+              <input type="text" id="coName" required placeholder="e.g. Tasnim Rahman" />
+            </div>
+            <div class="form-field">
+              <label for="coPhone">Mobile Number</label>
+              <input type="tel" id="coPhone" required placeholder="+880 17XX-XXXXXX" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="coEmail">Email Address</label>
+              <input type="email" id="coEmail" required placeholder="you@example.com" />
+            </div>
+            <div class="form-field">
+              <label for="coCity">Delivery City</label>
+              <select id="coCity">
+                <option value="Dhaka">Dhaka Metro (৳150 · Free over ৳10,000)</option>
+                <option value="Chattogram">Chattogram (৳220 · Free over ৳10,000)</option>
+                <option value="Sylhet">Sylhet (৳220 · Free over ৳10,000)</option>
+                <option value="Rajshahi">Rajshahi (৳220 · Free over ৳10,000)</option>
+                <option value="Khulna">Khulna (৳220 · Free over ৳10,000)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="coAddress">Street Address &amp; Apartment</label>
+            <textarea id="coAddress" rows="2" required placeholder="House, Road, Block, Area"></textarea>
+          </div>
+
+          <fieldset class="payment-fieldset">
+            <legend>Payment Method</legend>
+            <div class="payment-options">
+              <label class="pay-card">
+                <input type="radio" name="paymentMethod" value="Cash on Delivery" checked />
+                <span class="pay-body">
+                  <strong>Cash on Delivery</strong>
+                  <small>Pay upon inspecting your parcel</small>
+                </span>
+              </label>
+              <label class="pay-card">
+                <input type="radio" name="paymentMethod" value="bKash" />
+                <span class="pay-body">
+                  <strong>bKash Merchant</strong>
+                  <small>Instant mobile wallet checkout</small>
+                </span>
+              </label>
+              <label class="pay-card">
+                <input type="radio" name="paymentMethod" value="Card" />
+                <span class="pay-body">
+                  <strong>Visa / Mastercard</strong>
+                  <small>Encrypted card authorization</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-burgundy btn-full btn-lg" id="placeOrderBtn">
+            Confirm &amp; Place Order
+          </button>
+        </form>
+
+        <div class="checkout-summary-box">
+          <h3>Order Summary</h3>
+          <div id="checkoutItemsMini" class="checkout-mini-list"></div>
+          <div class="totals-breakdown" id="checkoutTotalsMini"></div>
+        </div>
+      </div>
+
+      <!-- Order Confirmation Receipt -->
+      <div id="checkoutSuccessView" class="order-receipt hidden">
+        <div class="receipt-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <h3>Order Confirmed</h3>
+        <p class="receipt-sub">Your bespoke selection has been logged with the Abhoron Atelier.</p>
+        <div class="receipt-id-box">
+          <span>Order Reference</span>
+          <strong id="receiptOrderId" class="mono-id">ABH-0000</strong>
+        </div>
+        <div id="receiptDetails" class="receipt-details"></div>
+        <div class="receipt-actions">
+          <button type="button" class="btn-burgundy" id="receiptTrackBtn">View in Order Tracker</button>
+          <button type="button" class="btn-outline-gold" data-close-modal="checkoutModal">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal (Google + Email/Password + Guest) -->
+  <div class="modal-overlay hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-card modal-narrow crystal-modal">
+      <div class="modal-head">
+        <div>
+          <h2 id="authModalTitle">Abhoron Client Account</h2>
+          <p class="modal-sub">Sign in to sync your orders &amp; wishlist, or continue as a guest shopper.</p>
+        </div>
+        <button type="button" class="icon-close" data-close-modal="authModal" aria-label="Close sign in">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab active" data-auth-mode="login">Sign In</button>
+        <button type="button" class="auth-tab" data-auth-mode="register">Create Account</button>
+      </div>
+
+      <button type="button" class="btn-google" id="googleSignInBtn">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58l3.7 2.87c2.16-1.99 3.72-4.92 3.72-8.69z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09L2.18 7.07C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.7-2.87c-1.02.68-2.33 1.09-3.58 1.09-2.86 0-5.29-1.93-6.16-4.53L2.18 16.93C3.99 20.53 7.7 23 12 23z"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <div class="auth-divider"><span>or with email</span></div>
+
+      <form id="emailAuthForm" class="auth-form">
+        <div class="form-field hidden" id="authNameWrap">
+          <label for="authNameInput">Full Name</label>
+          <input type="text" id="authNameInput" placeholder="Your full name" />
+        </div>
+        <div class="form-field">
+          <label for="authEmailInput">Email</label>
+          <input type="email" id="authEmailInput" required placeholder="you@example.com" />
+        </div>
+        <div class="form-field">
+          <label for="authPassInput">Password</label>
+          <input type="password" id="authPassInput" required minlength="6" placeholder="Minimum 6 characters" />
+        </div>
+        <p class="form-error hidden" id="authErrorMsg"></p>
+        <button type="submit" class="btn-burgundy btn-full" id="authSubmitBtn">Sign In</button>
+      </form>
+
+      <button type="button" class="btn-link-muted" data-close-modal="authModal">
+        Continue browsing as Guest
+      </button>
+    </div>
+  </div>
+
+  <!-- Customer Order Tracker Modal -->
+  <div class="modal-overlay hidden" id="ordersModal" role="dialog" aria-modal="true" aria-labelledby="ordersModalTitle">
+    <div class="modal-card modal-wide crystal-modal">
+      <div class="modal-head">
+        <div>
+          <h2 id="ordersModalTitle">Order Tracking &amp; History</h2>
+          <p class="modal-sub">Live status updates from the Abhoron fulfillment desk.</p>
+        </div>
+        <button type="button" class="icon-close" data-close-modal="ordersModal" aria-label="Close order tracker">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+
+      <form id="trackLookupForm" class="lookup-bar">
+        <input type="text" id="trackLookupInput" placeholder="Enter Order ID (e.g. ABH-4821)" />
+        <button type="submit" class="btn-outline-gold">Lookup Order</button>
+      </form>
+      <div id="trackLookupResult"></div>
+      <div id="ordersListContainer" class="orders-list"></div>
+    </div>
+  </div>
+
+  <!-- Admin Atelier Panel Modal (Store Owner RBAC) -->
+  <div class="modal-overlay hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+    <div class="modal-card modal-xl crystal-modal">
+      <div class="modal-head">
+        <div>
+          <div class="admin-badge-row">
+            <span class="role-badge-admin">Store Owner · Admin</span>
+            <span class="mono-pill" id="adminEmailDisplay">alansari10157@gmail.com</span>
+          </div>
+          <h2 id="adminModalTitle">Abhoron Admin Atelier</h2>
+        </div>
+        <button type="button" class="icon-close" data-close-modal="adminModal" aria-label="Close admin panel">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+
+      <div class="admin-kpi-strip" id="adminKpiStrip"></div>
+
+      <div class="admin-tabs" role="tablist">
+        <button type="button" class="admin-tab active" data-admin-tab="inventory">Inventory &amp; Pricing</button>
+        <button type="button" class="admin-tab" data-admin-tab="add">Add New Couture Piece</button>
+        <button type="button" class="admin-tab" data-admin-tab="orders">Customer Orders</button>
+      </div>
+
+      <!-- Tab 1: Inventory -->
+      <div class="admin-panel" id="adminTabInventory">
+        <div class="admin-toolbar">
+          <p class="muted-note">Adjust stock or pricing directly; changes sync live to Cloud Firestore (`abhoron_products`).</p>
+          <button type="button" class="btn-outline-gold btn-sm" id="seedFirestoreBtn">Sync Curated Catalog to Firestore</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Piece &amp; SKU</th>
+                <th>Category</th>
+                <th>Price (৳)</th>
+                <th>Stock</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminInventoryBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 2: Add Product -->
+      <div class="admin-panel hidden" id="adminTabAdd">
+        <form id="adminAddProductForm" class="admin-form">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="apTitle">Product Title</label>
+              <input type="text" id="apTitle" required placeholder="e.g. Sonargaon Ivory Zari Jamdani" />
+            </div>
+            <div class="form-field">
+              <label for="apCategory">Category</label>
+              <select id="apCategory" required>
+                <option value="Jamdani Sarees">Jamdani Sarees</option>
+                <option value="Silk Panjabi">Silk Panjabi</option>
+                <option value="Muslin Kurtis">Muslin Kurtis</option>
+                <option value="Handloom Shirts">Handloom Shirts</option>
+                <option value="Zari Shawls">Zari Shawls</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-field">
+              <label for="apPrice">Price (BDT ৳)</label>
+              <input type="number" id="apPrice" required min="500" step="50" placeholder="9500" />
+            </div>
+            <div class="form-field">
+              <label for="apStock">Stock Quantity</label>
+              <input type="number" id="apStock" required min="0" value="10" />
+            </div>
+            <div class="form-field">
+              <label for="apFabric">Fabric &amp; Craft</label>
+              <input type="text" id="apFabric" required placeholder="100-Count Cotton Jamdani" />
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-field">
+              <label for="apPattern">Weave Motif Art</label>
+              <select id="apPattern">
+                <option value="jamdani">Jamdani Diamond Buti</option>
+                <option value="silk">Rajshahi Silk Zari</option>
+                <option value="muslin">Muslin Floral Jaal</option>
+                <option value="handloom">Khadi Handloom Stripe</option>
+                <option value="shawl">Kashmiri Zari Paisley</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="apColorPrimary">Primary Dye Hex</label>
+              <input type="color" id="apColorPrimary" value="#881337" />
+            </div>
+            <div class="form-field">
+              <label for="apColorAccent">Zari Accent Hex</label>
+              <input type="color" id="apColorAccent" value="#D97706" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="apDescription">Editorial Description</label>
+            <textarea id="apDescription" rows="2" required placeholder="Describe the loom origin, drape, zari detailing, and occasion."></textarea>
+          </div>
+
+          <button type="submit" class="btn-burgundy">Publish to Storefront</button>
+        </form>
+      </div>
+
+      <!-- Tab 3: Orders -->
+      <div class="admin-panel hidden" id="adminTabOrders">
+        <div id="adminOrdersList" class="admin-orders-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Stack -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
